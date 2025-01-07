@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProgressBar Demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <h1 class="header">Progress</h1>
+  <div class="container">
+    <div id="progress-container"></div>
+    <div class="controls">
+      <div class="grouped-switches">
+        <div class="switch-item">
+          <input 
+            type="number" 
+            id="inputValue" 
+            value="30" 
+            min="0" 
+            max="100" 
+            step="1"
+          />
+          Value
+        </div>
+        <div class="switch-item">
+          <label class="switch">
+            <input type="checkbox" id="inputAnimate" />
+            <span class="slider"></span>
+          </label>
+          <span>Animate</span>
+        </div>
+        <div class="switch-item">
+          <label class="switch">
+            <input type="checkbox" id="inputHide" />
+            <span class="slider"></span>
+          </label>
+          <span>Hide</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./progress-bar.js"></script>
+  <script type="module" src="./demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Manrope:wght@200..800&display=swap');
+
+:root, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bkg: #fff;
+  --text: #232323;
+  --blue: #2164f3;
+  --gray: #eeeeee;
+}
+
+body {
+  position: relative;
+  display: flex;
+  min-width: 320px;
+  font-family: 'Fredoka', sans-serif;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 20px;
+  color: var(--text);
+  height: 100svh;
+  background-color: var(--bkg);
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  height: 100%;
+}
+
+#progress-container, .controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls input[type="number"] {
+  display: flex;
+  justify-items: center;
+  width: 45px;
+  height: 28px;
+  box-sizing: border-box;
+  border: 1px solid var(--text);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  outline: none;
+}
+
+.controls input[type="number"]:focus {
+  border: 2px solid var(--blue);
+}
+
+.controls input[type="number"]::-webkit-inner-spin-button, 
+.controls input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.grouped-switches {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.switch-item {
+  display: flex;
+  gap: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--gray);
+  transition: .3s;
+  border-radius: 28px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--bkg);
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--blue);
+}
+input:checked + .slider::before {
+  transform: translateX(17px);
+}
+
+@media (min-width: 568px) and (orientation: landscape) {
+  .container {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 1.2rem;
+  }
+}
